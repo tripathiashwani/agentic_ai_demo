@@ -11,6 +11,8 @@ export default function TodoList({
   onToggle,
   onUpdate,
   onDelete,
+  priorityFilter,
+  onPriorityChange,
 }) {
   return (
     <div>
@@ -37,6 +39,15 @@ export default function TodoList({
           >
             Completed
           </button>
+        </div>
+
+        <div className="priority-filter">
+          <select value={priorityFilter} onChange={(e) => onPriorityChange(e.target.value)}>
+            <option value="all">All</option>
+            <option value="high">High</option>
+            <option value="medium">Medium</option>
+            <option value="low">Low</option>
+          </select>
         </div>
 
         <div className="search-box">
